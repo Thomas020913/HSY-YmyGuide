@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="商品管理"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btn_add_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加新商品"/>
+
+    <Button
+        android:id="@+id/btn_delete_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除商品"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btn_update_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更新商品库存"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btn_query_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询现有商品"
+        android:layout_marginTop="12dp"/>
+
+    <!-- 后续可扩展商品列表 -->
+
+</LinearLayout> 

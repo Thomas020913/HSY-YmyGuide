@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询门票"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <TableLayout
+                android:id="@+id/ticket_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+                <TableRow>
+                    <TextView android:text="ID" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                    <TextView android:text="园区" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                    <TextView android:text="类型" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                    <TextView android:text="价格" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                    <TextView android:text="现库存" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                    <TextView android:text="总库存" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                    <TextView android:text="有效期(天)" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                    <TextView android:text="可退" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                    <TextView android:text="创建时间" android:textStyle="bold" android:gravity="center" android:padding="8dp"/>
+                </TableRow>
+                <!-- 动态添加数据行 -->
+            </TableLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thomas.page">
+    <!--允许访问网络，必选权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--允许获取粗略位置，若用GPS实现定位小蓝点功能则必选-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!--允许获取网络状态，用于网络定位，若无gps但仍需实现定位小蓝点功能则此权限必选-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--允许获取wifi网络信息，用于网络定位，若无gps但仍需实现定位小蓝点功能则此权限必选-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!--允许获取wifi状态改变，用于网络定位，若无gps但仍需实现定位小蓝点功能则此权限必选-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!--允许写入扩展存储，用于数据缓存，若无此权限则写到私有目录-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--允许写设备缓存，用于问题排查-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!--允许读设备等信息，用于问题排查-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".MapApplication">
+        <!--设置高德Key-->
+        <service android:name="com.amap.api.location.APSService" />
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="884847c63f023fcb14585ea468a25f59"/>
+
+        <!-- 旅行者页面 -->
+        <activity android:name=".TravelerActivity" />
+<!--        子界面-->
+        <activity android:name=".traveler.map.MapActivity"/>
+        <activity android:name=".traveler.TicketActivity"/>
+        <activity android:name=".traveler.ticket.TicketPurchaseActivity"/>
+        <activity android:name=".traveler.ticket.purchase.YmyPurchaseActivity"/>
+        <activity android:name=".traveler.ticket.purchase.CcyPurchaseActivity"/>
+        <activity android:name=".traveler.ticket.purchase.QcyPurchaseActivity"/>
+        <activity android:name=".traveler.ticket.purchase.return_order.OrderReturnActivity"/>
+        <activity android:name=".traveler.ProductActivity"/>
+        <activity android:name=".traveler.product.purchase.ProductPurchaseActivity"/>
+        <activity android:name=".traveler.product.purchase.return_order.OrderReturnActivity"/>
+        <activity android:name=".traveler.map.SpotListActivity"/>
+
+        <!-- 管理员页面 -->
+        <activity android:name=".AdminActivity" />
+<!--        子界面-->
+        <activity android:name=".admin.TicketActivity"/>
+        <activity android:name=".admin.ticket.TicketAddActivity"/>
+        <activity android:name=".admin.ticket.TicketQueryActivity"/>
+        <activity android:name=".admin.ProductActivity"/>
+        <activity android:name=".admin.product.ProductAddActivity"/>
+        <activity android:name=".admin.product.ProductDeleteActivity"/>
+        <activity android:name=".admin.product.ProductUpdateActivity"/>
+        <activity android:name=".admin.product.ProductQueryActivity"/>
+        <activity android:name=".admin.UserActivity"/>
+        <activity android:name=".admin.user.UserAddActivity"/>
+        <activity android:name=".admin.user.UserDeleteActivity"/>
+        <activity android:name=".admin.user.UserUpdateActivity"/>
+        <activity android:name=".admin.user.UserQueryActivity"/>
+        <activity android:name=".admin.ScenicSpotActivity"/>
+        <activity android:name=".admin.scenicSpot.ScenicSpotQueryActivity"/>
+        <activity android:name=".admin.scenicSpot.ScenicSpotAddActivity"/>
+        <activity android:name=".admin.scenicSpot.ScenicSpotDeleteActivity"/>
+        <activity android:name=".admin.scenicSpot.ScenicSpotUpdateActivity"/>
+
+        <!-- 工作人员页面 -->
+        <activity android:name=".WorkerActivity" />
+        <activity android:name=".worker.ProductActivity"/>
+        <activity android:name=".worker.TicketActivity"/>
+        <activity android:name=".worker.product_order.ProductUpdateActivity"/>
+        <activity android:name=".worker.ticket_order.TicketUpdateActivity"/>
+    </application>
+</manifest>

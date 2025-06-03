@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 顶部纵向输入区 -->
+    <LinearLayout
+        android:id="@+id/layout_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#CCFFFFFF"
+        android:padding="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_circle_blue"
+                android:layout_marginEnd="8dp"/>
+            <EditText
+                android:id="@+id/et_start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="输入起点"
+                android:padding="8dp"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_current_location"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="设置起点为当前位置"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#fff"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_circle_red"
+                android:layout_marginEnd="8dp"/>
+            <EditText
+                android:id="@+id/et_end"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="输入终点"
+                android:padding="8dp"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 高德地图 MapView -->
+    <com.amap.api.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_input"
+        android:layout_above="@id/btn_start_navi"/>
+
+    <!-- 步行信息卡片，初始不可见 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_walk_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/btn_start_navi"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_walk_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="步行用时："
+                android:textSize="16sp"
+                android:textColor="#222"/>
+
+            <TextView
+                android:id="@+id/tv_walk_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="步行距离："
+                android:textSize="16sp"
+                android:textColor="#222"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 开始导航按钮，固定在底部 -->
+    <Button
+        android:id="@+id/btn_start_navi"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="开始导航"
+        android:textSize="18sp"
+        android:textColor="#fff"
+        android:backgroundTint="#FF9800"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:elevation="4dp"/>
+
+    <!-- 景点列表按钮，上移到"开始导航"按钮上方 -->
+    <Button
+        android:id="@+id/btn_spot_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="景点列表"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/btn_start_navi"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"/>
+
+</RelativeLayout>

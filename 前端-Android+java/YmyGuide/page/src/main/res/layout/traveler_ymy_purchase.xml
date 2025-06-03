@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- 上方1/4图片 -->
+    <ImageView
+        android:id="@+id/iv_park_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/yuanmingyuan" />
+
+    <!-- 园区名和介绍 -->
+    <TextView
+        android:id="@+id/tv_park_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="圆明园"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+    <TextView
+        android:id="@+id/tv_park_intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="圆明园介绍..."
+        android:textSize="15sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 用户信息填写 -->
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="您的真实姓名"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="园区"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"/>
+    <EditText
+        android:id="@+id/et_park"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="圆明园"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="票种"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"/>
+    <Spinner
+        android:id="@+id/spinner_ticket_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数量"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"/>
+    <Spinner
+        android:id="@+id/spinner_ticket_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- 确认按钮 -->
+    <Button
+        android:id="@+id/confirm_purchase_button"
+        android:text="确认购买"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
